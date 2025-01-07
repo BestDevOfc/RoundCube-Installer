@@ -88,6 +88,7 @@ class Checker(object):
         # self.check_url("http://216.239.133.150")
         with ThreadPoolExecutor(max_workers=100) as executor:
             executor.map( self.check_url, self.urls )
+        self.results_file.close()
 
 
 if __name__ == "__main__":
