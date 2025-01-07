@@ -63,6 +63,7 @@ class Checker(object):
             return
         
         # now get the redirect path
+        # this is important because some sites may have it as /mail or /roundemail or /login
         try:
             url = req.url+'/installer'
             if ("$config['enable_installer'] = true" in req.text) or ("<h3>Checking PHP version</h3>" not in req.text):
